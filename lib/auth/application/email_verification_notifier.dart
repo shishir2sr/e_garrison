@@ -8,7 +8,7 @@ part 'email_verification_notifier.freezed.dart';
 class EmailVerificationState with _$EmailVerificationState {
   const EmailVerificationState._();
   const factory EmailVerificationState.initial() = _Initial;
-  const factory EmailVerificationState.verified(bool status) = _Verified;
+  const factory EmailVerificationState.submitted() = _Submitted;
   const factory EmailVerificationState.error(AuthFailure failure) = _Error;
 }
 
@@ -17,11 +17,12 @@ class EmailVerificationNotifier extends StateNotifier<EmailVerificationState> {
   EmailVerificationNotifier(this._authRepository)
       : super(const EmailVerificationState.initial());
 
-  Future<void> isEmailVerified() async {
+  Future<bool> isEmailVerified() async {
     final successOrFailure = await _authRepository.isEmailVerified();
 
-    successOrFailure.fold(
-        (failure) => state = EmailVerificationState.error(failure),
-        (isVerified) => state = EmailVerificationState.verified(isVerified));
+    return successOrFailure.fold((failure) {
+      state = EmailVerificationState.error(failure);
+      return false;
+    }, (r) => r);
   }
 }
