@@ -62,6 +62,17 @@ class AuthNotifier extends StateNotifier<AuthState> {
         (failure) => state = AuthState.error(failure), (r) {});
   }
 
+  Future<void> signOut() async {
+    await _authRepository.signOut();
+  }
+
+  Future<void> isEmailVerified() async {
+    final failureOrSuccess = await _authRepository.isEmailVerified();
+
+    failureOrSuccess.fold((failure) => state = AuthState.error(failure),
+        (isVarified) => state = const AuthState.authenticated());
+  }
+
   @override
   Future<void> dispose() async {
     super.dispose();
