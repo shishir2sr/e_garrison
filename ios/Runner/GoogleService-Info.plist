@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>766804209312-p16i8bud13lh68j8ou5ck5b5jmknjeck.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.766804209312-p16i8bud13lh68j8ou5ck5b5jmknjeck</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>766804209312-5ip4ca23a6df5d7tievmf6gqef63i65d.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD-M9KugZj4nT2zV-IHCcqky7NSo1r7WUE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>766804209312</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yeasirarefin.eGarrison</string>
+	<key>PROJECT_ID</key>
+	<string>egarrison-5858f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>egarrison-5858f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:766804209312:ios:60acf61eb1403e6e8d23c5</string>
+</dict>
+</plist>

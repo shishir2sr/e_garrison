@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "766804209312",
+    "project_id": "egarrison-5858f",
+    "storage_bucket": "egarrison-5858f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766804209312:android:3fffd69a5621a1ef8d23c5",
+        "android_client_info": {
+          "package_name": "com.example.e_garrison"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766804209312-5ip4ca23a6df5d7tievmf6gqef63i65d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.e_garrison",
+            "certificate_hash": "1def1861ee9762891302582ea705b9732a2a3f30"
+          }
+        },
+        {
+          "client_id": "766804209312-kuf4b8n61l9mppv3bn41juq2bnd06mc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuY3IjQiwkXq_2SIMCokK4C95_BGlVppc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766804209312-kuf4b8n61l9mppv3bn41juq2bnd06mc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766804209312:android:959c4388c481733a8d23c5",
+        "android_client_info": {
+          "package_name": "com.yeasirarefin.e_garrison"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766804209312-kuf4b8n61l9mppv3bn41juq2bnd06mc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuY3IjQiwkXq_2SIMCokK4C95_BGlVppc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766804209312-kuf4b8n61l9mppv3bn41juq2bnd06mc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
