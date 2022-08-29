@@ -22,10 +22,8 @@ class _$EmailVerificationStateTearOff {
     return const _Initial();
   }
 
-  _Verified verified(bool status) {
-    return _Verified(
-      status,
-    );
+  _Submitted submitted() {
+    return const _Submitted();
   }
 
   _Error error(AuthFailure failure) {
@@ -43,21 +41,21 @@ mixin _$EmailVerificationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool status) verified,
+    required TResult Function() submitted,
     required TResult Function(AuthFailure failure) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) =>
@@ -65,21 +63,21 @@ mixin _$EmailVerificationState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Verified value) verified,
+    required TResult Function(_Submitted value) submitted,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -143,7 +141,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool status) verified,
+    required TResult Function() submitted,
     required TResult Function(AuthFailure failure) error,
   }) {
     return initial();
@@ -153,7 +151,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
   }) {
     return initial?.call();
@@ -163,7 +161,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -177,7 +175,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Verified value) verified,
+    required TResult Function(_Submitted value) submitted,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -187,7 +185,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -197,7 +195,7 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -214,95 +212,72 @@ abstract class _Initial extends EmailVerificationState {
 }
 
 /// @nodoc
-abstract class _$VerifiedCopyWith<$Res> {
-  factory _$VerifiedCopyWith(_Verified value, $Res Function(_Verified) then) =
-      __$VerifiedCopyWithImpl<$Res>;
-  $Res call({bool status});
+abstract class _$SubmittedCopyWith<$Res> {
+  factory _$SubmittedCopyWith(
+          _Submitted value, $Res Function(_Submitted) then) =
+      __$SubmittedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$VerifiedCopyWithImpl<$Res>
+class __$SubmittedCopyWithImpl<$Res>
     extends _$EmailVerificationStateCopyWithImpl<$Res>
-    implements _$VerifiedCopyWith<$Res> {
-  __$VerifiedCopyWithImpl(_Verified _value, $Res Function(_Verified) _then)
-      : super(_value, (v) => _then(v as _Verified));
+    implements _$SubmittedCopyWith<$Res> {
+  __$SubmittedCopyWithImpl(_Submitted _value, $Res Function(_Submitted) _then)
+      : super(_value, (v) => _then(v as _Submitted));
 
   @override
-  _Verified get _value => super._value as _Verified;
-
-  @override
-  $Res call({
-    Object? status = freezed,
-  }) {
-    return _then(_Verified(
-      status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
+  _Submitted get _value => super._value as _Submitted;
 }
 
 /// @nodoc
 
-class _$_Verified extends _Verified {
-  const _$_Verified(this.status) : super._();
-
-  @override
-  final bool status;
+class _$_Submitted extends _Submitted {
+  const _$_Submitted() : super._();
 
   @override
   String toString() {
-    return 'EmailVerificationState.verified(status: $status)';
+    return 'EmailVerificationState.submitted()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _Verified &&
-            const DeepCollectionEquality().equals(other.status, status));
+        (other.runtimeType == runtimeType && other is _Submitted);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
-
-  @JsonKey(ignore: true)
-  @override
-  _$VerifiedCopyWith<_Verified> get copyWith =>
-      __$VerifiedCopyWithImpl<_Verified>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool status) verified,
+    required TResult Function() submitted,
     required TResult Function(AuthFailure failure) error,
   }) {
-    return verified(status);
+    return submitted();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
   }) {
-    return verified?.call(status);
+    return submitted?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
-    if (verified != null) {
-      return verified(status);
+    if (submitted != null) {
+      return submitted();
     }
     return orElse();
   }
@@ -311,45 +286,40 @@ class _$_Verified extends _Verified {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Verified value) verified,
+    required TResult Function(_Submitted value) submitted,
     required TResult Function(_Error value) error,
   }) {
-    return verified(this);
+    return submitted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
   }) {
-    return verified?.call(this);
+    return submitted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (verified != null) {
-      return verified(this);
+    if (submitted != null) {
+      return submitted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Verified extends EmailVerificationState {
-  const factory _Verified(bool status) = _$_Verified;
-  const _Verified._() : super._();
-
-  bool get status;
-  @JsonKey(ignore: true)
-  _$VerifiedCopyWith<_Verified> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Submitted extends EmailVerificationState {
+  const factory _Submitted() = _$_Submitted;
+  const _Submitted._() : super._();
 }
 
 /// @nodoc
@@ -425,7 +395,7 @@ class _$_Error extends _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(bool status) verified,
+    required TResult Function() submitted,
     required TResult Function(AuthFailure failure) error,
   }) {
     return error(failure);
@@ -435,7 +405,7 @@ class _$_Error extends _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
   }) {
     return error?.call(failure);
@@ -445,7 +415,7 @@ class _$_Error extends _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(bool status)? verified,
+    TResult Function()? submitted,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -459,7 +429,7 @@ class _$_Error extends _Error {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Verified value) verified,
+    required TResult Function(_Submitted value) submitted,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -469,7 +439,7 @@ class _$_Error extends _Error {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -479,7 +449,7 @@ class _$_Error extends _Error {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Verified value)? verified,
+    TResult Function(_Submitted value)? submitted,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
