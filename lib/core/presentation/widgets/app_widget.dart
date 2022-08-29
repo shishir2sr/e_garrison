@@ -15,7 +15,7 @@ class AppWidget extends ConsumerWidget {
     //
     //listening to suthstate searching if user is authenticated or not
     /************************************** */
-//
+
     ref.listen<AuthState>(authNotifierProvider, (_, state) {
       state.maybeWhen(
 //
