@@ -1,16 +1,18 @@
 import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/email_icon_button.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/form_text_input.dart';
+import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/validators/form_validators.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignInForm extends StatefulWidget {
+class SignInForm extends ConsumerStatefulWidget {
   const SignInForm({Key? key}) : super(key: key);
 
   @override
   _SignInFormState createState() => _SignInFormState();
 }
 
-class _SignInFormState extends State<SignInForm> {
+class _SignInFormState extends ConsumerState<SignInForm> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -43,7 +45,14 @@ class _SignInFormState extends State<SignInForm> {
           ),
           EmailIconButton(
             text: 'Sign in with Email',
-            onPressed: () {},
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                ref
+                    .watch(authNotifierProvider.notifier)
+                    .signInWithEmailAndPassword(
+                        _emailController.text, _passwordController.text);
+              }
+            },
           ),
         ],
       ),
