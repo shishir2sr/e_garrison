@@ -1,17 +1,19 @@
 import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/email_icon_button.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/form_text_input.dart';
+import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/theming/custom_colors.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/validators/form_validators.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PasswordResetForm extends StatefulWidget {
+class PasswordResetForm extends ConsumerStatefulWidget {
   const PasswordResetForm({Key? key}) : super(key: key);
 
   @override
   _PasswordResetFormState createState() => _PasswordResetFormState();
 }
 
-class _PasswordResetFormState extends State<PasswordResetForm> {
+class _PasswordResetFormState extends ConsumerState<PasswordResetForm> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
 
@@ -55,7 +57,13 @@ class _PasswordResetFormState extends State<PasswordResetForm> {
           const SizedBox(height: 20),
           EmailIconButton(
             text: 'Send Reset Email',
-            onPressed: () {},
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                ref
+                    .read(passwordResetNotifierProvider.notifier)
+                    .sendPasswordResetEmail(_emailController.text);
+              }
+            },
           ),
         ],
       ),

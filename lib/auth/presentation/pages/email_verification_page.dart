@@ -1,12 +1,36 @@
+import 'package:firebase_auth_with_riverpod_tutorial/auth/application/email_verification_notifier.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/bottom_text_link.dart';
+import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
+import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/router/router.gr.dart';
+import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/error_success_flash.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/logo_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class EmailVerificationPage extends StatelessWidget {
+class EmailVerificationPage extends ConsumerWidget {
   const EmailVerificationPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen<EmailVerificationState>(
+      emailVerificationNotifierProvider,
+      (_, state) => state.maybeWhen(
+          submitted: () => showSuccessFlash(context, 'Verification email sent'),
+          error: (failure) {
+            failure.maybeWhen(
+                noNetworkConnection: () =>
+                    showErrorFlash(context, 'No network connection'),
+                tooManyRequests: () =>
+                    showErrorFlash(context, 'Too many requests'),
+                unexpectedError: () =>
+                    showErrorFlash(context, 'An unexpected error occurred'),
+                orElse: () {});
+            return null;
+          },
+          orElse: () {
+            return null;
+          }),
+    );
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -40,7 +64,14 @@ class EmailVerificationPage extends StatelessWidget {
                   height: 20,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    final isEmailVerified = await ref
+                        .read(emailVerificationNotifierProvider.notifier)
+                        .isEmailVerified();
+                    isEmailVerified
+                        ? const HomeRoute()
+                        : showErrorFlash(context, 'Email does not verified');
+                  },
                   child: const Center(
                     child: Text('Continue'),
                   ),
@@ -51,7 +82,9 @@ class EmailVerificationPage extends StatelessWidget {
                 BottomTextLink(
                   text: 'Still don\'t see the email?',
                   link: 'Resend email.',
-                  onPressed: () {},
+                  onPressed: ref
+                      .watch(emailVerificationNotifierProvider.notifier)
+                      .resendVerificationEmail,
                 ),
               ],
             ),
