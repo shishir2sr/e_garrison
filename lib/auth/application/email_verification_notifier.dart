@@ -17,12 +17,19 @@ class EmailVerificationNotifier extends StateNotifier<EmailVerificationState> {
   EmailVerificationNotifier(this._authRepository)
       : super(const EmailVerificationState.initial());
 
+  ///email verification check
   Future<bool> isEmailVerified() async {
     final successOrFailure = await _authRepository.isEmailVerified();
-
     return successOrFailure.fold((failure) {
       state = EmailVerificationState.error(failure);
       return false;
     }, (r) => r);
+  } //email verification ends
+
+  ///email verification resend
+  Future<void> resendVerificationEmail() async {
+    final successOrFailure = await _authRepository.resendVerificationEmail();
+    successOrFailure.fold((failure) => EmailVerificationState.error(failure),
+        (r) => const EmailVerificationState.submitted());
   }
 }
