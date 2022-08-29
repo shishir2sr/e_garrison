@@ -1,16 +1,18 @@
-import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/pages/sign_up_page.dart';
+import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/router/router.gr.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/theming/custom_theme.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({Key? key}) : super(key: key);
+  AppWidget({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: CustomTheme.appTheme,
-      home: const SignUpPage(),
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }
