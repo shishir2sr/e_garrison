@@ -1,15 +1,17 @@
 import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/form_text_input.dart';
+import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
 import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/validators/form_validators.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SignUpForm extends StatefulWidget {
+class SignUpForm extends ConsumerStatefulWidget {
   const SignUpForm({Key? key}) : super(key: key);
 
   @override
   _SignInFormState createState() => _SignInFormState();
 }
 
-class _SignInFormState extends State<SignUpForm> {
+class _SignInFormState extends ConsumerState<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -51,7 +53,14 @@ class _SignInFormState extends State<SignUpForm> {
             controller: _confirmPasswordController,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                ref
+                    .read(authNotifierProvider.notifier)
+                    .registerWithEmailAndPassword(
+                        _emailController.text, _passwordController.text);
+              }
+            },
             child: const Center(
               child: Text('Create an Account'),
             ),
