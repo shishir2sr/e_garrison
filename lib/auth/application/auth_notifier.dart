@@ -47,6 +47,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   ///returns nothing if success
   ///returns failure if occurd
   Future<void> signInWithEmailAndPassword(String email, String password) async {
+    print('sign in button works');
     final failureOrSuccess =
         await _authRepository.signInWithEmailAndPassword(email, password);
 
