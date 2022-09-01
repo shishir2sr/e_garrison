@@ -1,5 +1,6 @@
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/theming/custom_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/presentation/theming/custom_colors.dart';
 
 class FormTextInput extends StatelessWidget {
   final String? label;

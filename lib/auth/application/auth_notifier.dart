@@ -1,10 +1,11 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/domain/auth_failure.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/infrastructure/auth_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../domain/auth_failure.dart';
+import '../infrastructure/auth_repository.dart';
 part 'auth_notifier.freezed.dart';
 
 @freezed
@@ -47,7 +48,6 @@ class AuthNotifier extends StateNotifier<AuthState> {
   ///returns nothing if success
   ///returns failure if occurd
   Future<void> signInWithEmailAndPassword(String email, String password) async {
-    print('sign in button works');
     final failureOrSuccess =
         await _authRepository.signInWithEmailAndPassword(email, password);
 

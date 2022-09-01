@@ -1,6 +1,7 @@
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/theming/custom_colors.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/material.dart';
+
+import '../theming/custom_colors.dart';
 
 void showErrorFlash(BuildContext context, String message) {
   showFlash(

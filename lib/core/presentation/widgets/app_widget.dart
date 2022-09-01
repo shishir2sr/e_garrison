@@ -1,10 +1,11 @@
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/auth_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/email_verification_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/router/router.gr.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/theming/custom_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../auth/application/auth_notifier.dart';
+import '../../../auth/application/email_verification_notifier.dart';
+import '../../../auth/shared/providers.dart';
+import '../router/router.gr.dart';
+import '../theming/custom_theme.dart';
 
 class AppWidget extends ConsumerWidget {
   AppWidget({Key? key}) : super(key: key);

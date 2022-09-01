@@ -1,11 +1,12 @@
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/email_verification_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/bottom_text_link.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/router/router.gr.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/error_success_flash.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/logo_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../core/presentation/router/router.gr.dart';
+import '../../../core/presentation/widgets/error_success_flash.dart';
+import '../../../core/presentation/widgets/logo_image.dart';
+import '../../application/email_verification_notifier.dart';
+import '../../shared/providers.dart';
+import '../widgets/bottom_text_link.dart';
 
 class EmailVerificationPage extends ConsumerWidget {
   const EmailVerificationPage({Key? key}) : super(key: key);

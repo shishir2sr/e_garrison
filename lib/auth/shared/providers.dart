@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/auth_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/email_verification_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/password_reset_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/infrastructure/auth_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import '../application/auth_notifier.dart';
+import '../application/email_verification_notifier.dart';
+import '../application/password_reset_notifier.dart';
+import '../infrastructure/auth_repository.dart';
 
 final firebaseAuthProvider = Provider((ref) => FirebaseAuth.instance);
 

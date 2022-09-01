@@ -1,7 +1,8 @@
-import 'package:firebase_auth_with_riverpod_tutorial/auth/domain/auth_failure.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/infrastructure/auth_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../domain/auth_failure.dart';
+import '../infrastructure/auth_repository.dart';
 part 'email_verification_notifier.freezed.dart';
 
 @freezed

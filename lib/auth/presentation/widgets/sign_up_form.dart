@@ -1,8 +1,9 @@
-import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/form_text_input.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/validators/form_validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../core/presentation/validators/form_validators.dart';
+import '../../shared/providers.dart';
+import 'form_text_input.dart';
 
 class SignUpForm extends ConsumerStatefulWidget {
   const SignUpForm({Key? key}) : super(key: key);

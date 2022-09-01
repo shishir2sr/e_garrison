@@ -1,5 +1,6 @@
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/logo_image.dart';
 import 'package:flutter/material.dart';
+
+import '../../core/presentation/widgets/logo_image.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);

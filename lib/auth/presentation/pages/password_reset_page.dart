@@ -1,10 +1,11 @@
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/password_reset_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/password_reset_form.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/error_success_flash.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/logo_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../core/presentation/widgets/error_success_flash.dart';
+import '../../../core/presentation/widgets/logo_image.dart';
+import '../../application/password_reset_notifier.dart';
+import '../../shared/providers.dart';
+import '../widgets/password_reset_form.dart';
 
 class PasswordResetPage extends ConsumerWidget {
   const PasswordResetPage({Key? key}) : super(key: key);

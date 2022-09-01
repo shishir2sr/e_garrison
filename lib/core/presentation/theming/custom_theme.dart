@@ -1,6 +1,7 @@
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/theming/custom_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'custom_colors.dart';
 
 class CustomTheme {
   static ThemeData get appTheme {

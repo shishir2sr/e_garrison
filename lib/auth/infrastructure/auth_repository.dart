@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/domain/auth_failure.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import '../domain/auth_failure.dart';
 
 class AuthRepository {
   final FirebaseAuth _firebaseAuth;

@@ -1,13 +1,14 @@
-import 'package:firebase_auth_with_riverpod_tutorial/auth/application/auth_notifier.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/bottom_text_link.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/google_sign_in_button.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/presentation/widgets/sign_up_form.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/auth/shared/providers.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/error_success_flash.dart';
-import 'package:firebase_auth_with_riverpod_tutorial/core/presentation/widgets/logo_image.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../core/presentation/widgets/error_success_flash.dart';
+import '../../../core/presentation/widgets/logo_image.dart';
+import '../../application/auth_notifier.dart';
+import '../../shared/providers.dart';
+import '../widgets/bottom_text_link.dart';
+import '../widgets/google_sign_in_button.dart';
+import '../widgets/sign_up_form.dart';
 
 class SignUpPage extends ConsumerWidget {
   const SignUpPage({Key? key}) : super(key: key);
