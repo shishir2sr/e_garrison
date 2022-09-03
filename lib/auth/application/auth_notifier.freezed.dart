@@ -30,6 +30,10 @@ class _$AuthStateTearOff {
     return const _UnAuthenticated();
   }
 
+  _Loading loading() {
+    return const _Loading();
+  }
+
   _Error error(AuthFailure failure) {
     return _Error(
       failure,
@@ -47,6 +51,7 @@ mixin _$AuthState {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +60,7 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +69,7 @@ mixin _$AuthState {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) =>
@@ -72,6 +79,7 @@ mixin _$AuthState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -80,6 +88,7 @@ mixin _$AuthState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -88,6 +97,7 @@ mixin _$AuthState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -150,6 +160,7 @@ class _$_Initial extends _Initial {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) {
     return initial();
@@ -161,6 +172,7 @@ class _$_Initial extends _Initial {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) {
     return initial?.call();
@@ -172,6 +184,7 @@ class _$_Initial extends _Initial {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -187,6 +200,7 @@ class _$_Initial extends _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -198,6 +212,7 @@ class _$_Initial extends _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -209,6 +224,7 @@ class _$_Initial extends _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -267,6 +283,7 @@ class _$_Authenticated extends _Authenticated {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) {
     return authenticated();
@@ -278,6 +295,7 @@ class _$_Authenticated extends _Authenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) {
     return authenticated?.call();
@@ -289,6 +307,7 @@ class _$_Authenticated extends _Authenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -304,6 +323,7 @@ class _$_Authenticated extends _Authenticated {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) {
     return authenticated(this);
@@ -315,6 +335,7 @@ class _$_Authenticated extends _Authenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) {
     return authenticated?.call(this);
@@ -326,6 +347,7 @@ class _$_Authenticated extends _Authenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -384,6 +406,7 @@ class _$_UnAuthenticated extends _UnAuthenticated {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) {
     return unAuthenticated();
@@ -395,6 +418,7 @@ class _$_UnAuthenticated extends _UnAuthenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) {
     return unAuthenticated?.call();
@@ -406,6 +430,7 @@ class _$_UnAuthenticated extends _UnAuthenticated {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -421,6 +446,7 @@ class _$_UnAuthenticated extends _UnAuthenticated {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) {
     return unAuthenticated(this);
@@ -432,6 +458,7 @@ class _$_UnAuthenticated extends _UnAuthenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) {
     return unAuthenticated?.call(this);
@@ -443,6 +470,7 @@ class _$_UnAuthenticated extends _UnAuthenticated {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -456,6 +484,127 @@ class _$_UnAuthenticated extends _UnAuthenticated {
 abstract class _UnAuthenticated extends AuthState {
   const factory _UnAuthenticated() = _$_UnAuthenticated;
   const _UnAuthenticated._() : super._();
+}
+
+/// @nodoc
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
+
+  @override
+  _Loading get _value => super._value as _Loading;
+}
+
+/// @nodoc
+
+class _$_Loading extends _Loading {
+  const _$_Loading() : super._();
+
+  @override
+  String toString() {
+    return 'AuthState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() authenticated,
+    required TResult Function() unAuthenticated,
+    required TResult Function() loading,
+    required TResult Function(AuthFailure failure) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unAuthenticated,
+    TResult Function()? loading,
+    TResult Function(AuthFailure failure)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? authenticated,
+    TResult Function()? unAuthenticated,
+    TResult Function()? loading,
+    TResult Function(AuthFailure failure)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Authenticated value) authenticated,
+    required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading extends AuthState {
+  const factory _Loading() = _$_Loading;
+  const _Loading._() : super._();
 }
 
 /// @nodoc
@@ -532,6 +681,7 @@ class _$_Error extends _Error {
     required TResult Function() initial,
     required TResult Function() authenticated,
     required TResult Function() unAuthenticated,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) {
     return error(failure);
@@ -543,6 +693,7 @@ class _$_Error extends _Error {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) {
     return error?.call(failure);
@@ -554,6 +705,7 @@ class _$_Error extends _Error {
     TResult Function()? initial,
     TResult Function()? authenticated,
     TResult Function()? unAuthenticated,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -569,6 +721,7 @@ class _$_Error extends _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_UnAuthenticated value) unAuthenticated,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -580,6 +733,7 @@ class _$_Error extends _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -591,6 +745,7 @@ class _$_Error extends _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_UnAuthenticated value)? unAuthenticated,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {

@@ -14,6 +14,7 @@ class AuthState with _$AuthState {
   const factory AuthState.initial() = _Initial;
   const factory AuthState.authenticated() = _Authenticated;
   const factory AuthState.unAuthenticated() = _UnAuthenticated;
+  const factory AuthState.loading() = _Loading;
   const factory AuthState.error(AuthFailure failure) = _Error;
 }
 
@@ -48,6 +49,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   ///returns nothing if success
   ///returns failure if occurd
   Future<void> signInWithEmailAndPassword(String email, String password) async {
+    state = const AuthState.loading();
     final failureOrSuccess =
         await _authRepository.signInWithEmailAndPassword(email, password);
 

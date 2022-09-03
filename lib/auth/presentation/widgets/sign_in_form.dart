@@ -30,7 +30,7 @@ class _SignInFormState extends ConsumerState<SignInForm> {
     return Form(
       key: _formKey,
       child: Column(
-        children: [
+        children: <Widget>[
           FormTextInput(
             label: 'Email',
             icon: Icons.email_rounded,
@@ -44,17 +44,19 @@ class _SignInFormState extends ConsumerState<SignInForm> {
             secure: true,
             controller: _passwordController,
           ),
-          EmailIconButton(
-            text: 'Sign in with Email',
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                ref
-                    .watch(authNotifierProvider.notifier)
-                    .signInWithEmailAndPassword(
-                        _emailController.text, _passwordController.text);
-              }
-            },
-          ),
+          ref.watch(authNotifierProvider).maybeWhen(
+              orElse: (() => EmailIconButton(
+                    text: 'Sign in with Email',
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        ref
+                            .watch(authNotifierProvider.notifier)
+                            .signInWithEmailAndPassword(_emailController.text,
+                                _passwordController.text);
+                      }
+                    },
+                  )),
+              loading: () => const CircularProgressIndicator())
         ],
       ),
     );
