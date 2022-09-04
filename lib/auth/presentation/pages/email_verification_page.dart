@@ -16,21 +16,22 @@ class EmailVerificationPage extends ConsumerWidget {
     ref.listen<EmailVerificationState>(
       emailVerificationNotifierProvider,
       (_, state) => state.maybeWhen(
-          submitted: () => showSuccessFlash(context, 'Verification email sent'),
-          error: (failure) {
-            failure.maybeWhen(
-                noNetworkConnection: () =>
-                    showErrorFlash(context, 'No network connection'),
-                tooManyRequests: () =>
-                    showErrorFlash(context, 'Too many requests'),
-                unexpectedError: () =>
-                    showErrorFlash(context, 'An unexpected error occurred'),
-                orElse: () {});
-            return null;
-          },
-          orElse: () {
-            return null;
-          }),
+        submitted: () => showSuccessFlash(context, 'Verification email sent'),
+        error: (failure) {
+          failure.maybeWhen(
+            noNetworkConnection: () =>
+                showErrorFlash(context, 'No network connection'),
+            tooManyRequests: () => showErrorFlash(context, 'Too many requests'),
+            unexpectedError: () =>
+                showErrorFlash(context, 'An unexpected error occurred'),
+            orElse: () {},
+          );
+          return null;
+        },
+        orElse: () {
+          return null;
+        },
+      ),
     );
     return Scaffold(
       body: SafeArea(

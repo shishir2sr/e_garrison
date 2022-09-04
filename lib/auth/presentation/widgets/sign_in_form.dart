@@ -28,37 +28,39 @@ class _SignInFormState extends ConsumerState<SignInForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
-      child: Column(
-        children: <Widget>[
-          FormTextInput(
-            label: 'Email',
-            icon: Icons.email_rounded,
-            validator: FormValidators.emailValidator(),
-            controller: _emailController,
-          ),
-          FormTextInput(
-            label: 'Password',
-            icon: Icons.lock_outline_rounded,
-            validator: FormValidators.passwordValidator(),
-            secure: true,
-            controller: _passwordController,
-          ),
-          ref.watch(authNotifierProvider).maybeWhen(
-              orElse: (() => EmailIconButton(
-                    text: 'Sign in with Email',
-                    onPressed: () {
-                      if (_formKey.currentState!.validate()) {
-                        ref
-                            .watch(authNotifierProvider.notifier)
-                            .signInWithEmailAndPassword(_emailController.text,
-                                _passwordController.text);
-                      }
-                    },
-                  )),
-              loading: () => const CircularProgressIndicator())
-        ],
-      ),
-    );
+        key: _formKey,
+        child: ref.read(authNotifierProvider).maybeWhen(
+              orElse: () => Column(
+                children: <Widget>[
+                  FormTextInput(
+                    label: 'Email',
+                    icon: Icons.email_rounded,
+                    validator: FormValidators.emailValidator(),
+                    controller: _emailController,
+                  ),
+                  FormTextInput(
+                    label: 'Password',
+                    icon: Icons.lock_outline_rounded,
+                    validator: FormValidators.passwordValidator(),
+                    secure: true,
+                    controller: _passwordController,
+                  ),
+                  ref.watch(authNotifierProvider).maybeWhen(
+                      orElse: (() => EmailIconButton(
+                            text: 'Sign in with Email',
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                ref
+                                    .watch(authNotifierProvider.notifier)
+                                    .signInWithEmailAndPassword(
+                                        _emailController.text,
+                                        _passwordController.text);
+                              }
+                            },
+                          )),
+                      loading: () => const CircularProgressIndicator())
+                ],
+              ),
+            ));
   }
 }

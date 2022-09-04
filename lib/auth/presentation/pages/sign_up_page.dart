@@ -17,20 +17,20 @@ class SignUpPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<AuthState>(authNotifierProvider, (_, state) {
       state.maybeWhen(
-          error: (failure) {
-            failure.maybeWhen(
-                emailInUse: () => showErrorFlash(context, 'Email in user'),
-                emailDoesNotExist: () =>
-                    showErrorFlash(context, 'Email does not exist'),
-                noNetworkConnection: () =>
-                    showErrorFlash(context, 'No network connection'),
-                tooManyRequests: () =>
-                    showErrorFlash(context, 'Too many requests'),
-                unexpectedError: () =>
-                    showErrorFlash(context, 'Unexpected error'),
-                orElse: () {});
-          },
-          orElse: () {});
+        error: (failure) {
+          failure.maybeWhen(
+            emailInUse: () => showErrorFlash(context, 'Email in use'),
+            emailDoesNotExist: () =>
+                showErrorFlash(context, 'Email does not exist'),
+            noNetworkConnection: () =>
+                showErrorFlash(context, 'No network connection'),
+            tooManyRequests: () => showErrorFlash(context, 'Too many requests'),
+            unexpectedError: () => showErrorFlash(context, 'Unexpected error'),
+            orElse: () {},
+          );
+        },
+        orElse: () {},
+      );
     });
     return Scaffold(
       body: SafeArea(
@@ -38,27 +38,30 @@ class SignUpPage extends ConsumerWidget {
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const LogoImage(),
-                  const SizedBox(height: 20),
-                  Text(
-                    'Sign Up',
-                    style: Theme.of(context).textTheme.headline5,
+              child: ref.watch(authNotifierProvider).maybeWhen(
+                    loading: () => const CircularProgressIndicator(),
+                    orElse: () => Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const LogoImage(),
+                        const SizedBox(height: 20),
+                        Text(
+                          'Sign Up',
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
+                        const SizedBox(height: 40),
+                        const SignUpForm(),
+                        const SizedBox(height: 5),
+                        const GoogleSignInButton(),
+                        const SizedBox(height: 5),
+                        BottomTextLink(
+                          text: 'Already have an account?',
+                          link: 'Sign in now.',
+                          onPressed: () => context.popRoute(),
+                        ),
+                      ],
+                    ),
                   ),
-                  const SizedBox(height: 40),
-                  const SignUpForm(),
-                  const SizedBox(height: 5),
-                  const GoogleSignInButton(),
-                  const SizedBox(height: 5),
-                  BottomTextLink(
-                    text: 'Already have an account?',
-                    link: 'Sign in now.',
-                    onPressed: () => context.popRoute(),
-                  ),
-                ],
-              ),
             ),
           ),
         ),

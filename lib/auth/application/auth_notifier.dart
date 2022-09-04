@@ -39,6 +39,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   /// register with email and pass notifier
   Future<void> registerWithEmailAndPassword(
       String email, String password) async {
+    state = const AuthState.loading();
     final failureOrSuccess =
         await _authRepository.registerWithEmailAndPassword(email, password);
     failureOrSuccess.fold(
@@ -60,12 +61,14 @@ class AuthNotifier extends StateNotifier<AuthState> {
   ///sign in with google method
   ///
   Future<void> signInWithGoogle() async {
+    state = const AuthState.loading();
     final failureOrSuccess = await _authRepository.signInWithGoogle();
     failureOrSuccess.fold(
         (failure) => state = AuthState.error(failure), (r) {});
   }
 
   Future<void> signOut() async {
+    state = const AuthState.loading();
     await _authRepository.signOut();
   }
 
