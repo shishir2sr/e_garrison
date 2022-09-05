@@ -11,6 +11,7 @@ class PasswordResetForm extends ConsumerStatefulWidget {
   const PasswordResetForm({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _PasswordResetFormState createState() => _PasswordResetFormState();
 }
 

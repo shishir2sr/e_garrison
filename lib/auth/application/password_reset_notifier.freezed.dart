@@ -26,6 +26,10 @@ class _$PasswordResetStateTearOff {
     return const _Submitted();
   }
 
+  _Loading loading() {
+    return const _Loading();
+  }
+
   _Error error(AuthFailure failure) {
     return _Error(
       failure,
@@ -42,6 +46,7 @@ mixin _$PasswordResetState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() submitted,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +54,7 @@ mixin _$PasswordResetState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +62,7 @@ mixin _$PasswordResetState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) =>
@@ -64,6 +71,7 @@ mixin _$PasswordResetState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Submitted value) submitted,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +79,7 @@ mixin _$PasswordResetState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -78,6 +87,7 @@ mixin _$PasswordResetState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -142,6 +152,7 @@ class _$_Initial extends _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() submitted,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) {
     return initial();
@@ -152,6 +163,7 @@ class _$_Initial extends _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) {
     return initial?.call();
@@ -162,6 +174,7 @@ class _$_Initial extends _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -176,6 +189,7 @@ class _$_Initial extends _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Submitted value) submitted,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -186,6 +200,7 @@ class _$_Initial extends _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -196,6 +211,7 @@ class _$_Initial extends _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -253,6 +269,7 @@ class _$_Submitted extends _Submitted {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() submitted,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) {
     return submitted();
@@ -263,6 +280,7 @@ class _$_Submitted extends _Submitted {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) {
     return submitted?.call();
@@ -273,6 +291,7 @@ class _$_Submitted extends _Submitted {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -287,6 +306,7 @@ class _$_Submitted extends _Submitted {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Submitted value) submitted,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) {
     return submitted(this);
@@ -297,6 +317,7 @@ class _$_Submitted extends _Submitted {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) {
     return submitted?.call(this);
@@ -307,6 +328,7 @@ class _$_Submitted extends _Submitted {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -320,6 +342,122 @@ class _$_Submitted extends _Submitted {
 abstract class _Submitted extends PasswordResetState {
   const factory _Submitted() = _$_Submitted;
   const _Submitted._() : super._();
+}
+
+/// @nodoc
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingCopyWithImpl<$Res>
+    extends _$PasswordResetStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
+
+  @override
+  _Loading get _value => super._value as _Loading;
+}
+
+/// @nodoc
+
+class _$_Loading extends _Loading {
+  const _$_Loading() : super._();
+
+  @override
+  String toString() {
+    return 'PasswordResetState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() submitted,
+    required TResult Function() loading,
+    required TResult Function(AuthFailure failure) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? submitted,
+    TResult Function()? loading,
+    TResult Function(AuthFailure failure)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? submitted,
+    TResult Function()? loading,
+    TResult Function(AuthFailure failure)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Submitted value) submitted,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading extends PasswordResetState {
+  const factory _Loading() = _$_Loading;
+  const _Loading._() : super._();
 }
 
 /// @nodoc
@@ -395,6 +533,7 @@ class _$_Error extends _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() submitted,
+    required TResult Function() loading,
     required TResult Function(AuthFailure failure) error,
   }) {
     return error(failure);
@@ -405,6 +544,7 @@ class _$_Error extends _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
   }) {
     return error?.call(failure);
@@ -415,6 +555,7 @@ class _$_Error extends _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? submitted,
+    TResult Function()? loading,
     TResult Function(AuthFailure failure)? error,
     required TResult orElse(),
   }) {
@@ -429,6 +570,7 @@ class _$_Error extends _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Submitted value) submitted,
+    required TResult Function(_Loading value) loading,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -439,6 +581,7 @@ class _$_Error extends _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -449,6 +592,7 @@ class _$_Error extends _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Submitted value)? submitted,
+    TResult Function(_Loading value)? loading,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {

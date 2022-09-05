@@ -41,21 +41,24 @@ class PasswordResetPage extends ConsumerWidget {
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const LogoImage(),
-                  const SizedBox(height: 20),
-                  Text(
-                    'Reset Your Password',
-                    style: Theme.of(context).textTheme.headline5,
+              child: ref.watch(passwordResetNotifierProvider).maybeWhen(
+                    loading: () => const CircularProgressIndicator(),
+                    orElse: () => Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const LogoImage(),
+                        const SizedBox(height: 20),
+                        Text(
+                          'Reset Your Password',
+                          style: Theme.of(context).textTheme.headline5,
+                        ),
+                        const SizedBox(
+                          height: 40,
+                        ),
+                        const PasswordResetForm(),
+                      ],
+                    ),
                   ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  const PasswordResetForm(),
-                ],
-              ),
             ),
           ),
         ),

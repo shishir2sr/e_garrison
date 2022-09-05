@@ -10,6 +10,7 @@ class EmailVerificationState with _$EmailVerificationState {
   const EmailVerificationState._();
   const factory EmailVerificationState.initial() = _Initial;
   const factory EmailVerificationState.submitted() = _Submitted;
+  const factory EmailVerificationState.loading() = _Loading;
   const factory EmailVerificationState.error(AuthFailure failure) = _Error;
 }
 
@@ -29,6 +30,7 @@ class EmailVerificationNotifier extends StateNotifier<EmailVerificationState> {
 
   ///email verification resend
   Future<void> resendVerificationEmail() async {
+    state = const EmailVerificationState.loading();
     final successOrFailure = await _authRepository.resendVerificationEmail();
     successOrFailure.fold((failure) => EmailVerificationState.error(failure),
         (r) => const EmailVerificationState.submitted());

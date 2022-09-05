@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "766804209312-5ip4ca23a6df5d7tievmf6gqef63i65d.apps.googleusercontent.com",
+          "client_id": "766804209312-du2clq11ipsm8s3q3nr1k98chq1pboo4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.e_garrison",
-            "certificate_hash": "1def1861ee9762891302582ea705b9732a2a3f30"
+            "certificate_hash": "e021e23ec40b25bbdc7e1618aa94b53adaf6a0c3"
           }
         },
         {
@@ -37,6 +37,13 @@
             {
               "client_id": "766804209312-kuf4b8n61l9mppv3bn41juq2bnd06mc7.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "766804209312-p16i8bud13lh68j8ou5ck5b5jmknjeck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yeasirarefin.eGarrison"
+              }
             }
           ]
         }
@@ -66,6 +73,13 @@
             {
               "client_id": "766804209312-kuf4b8n61l9mppv3bn41juq2bnd06mc7.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "766804209312-p16i8bud13lh68j8ou5ck5b5jmknjeck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yeasirarefin.eGarrison"
+              }
             }
           ]
         }

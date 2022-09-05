@@ -11,6 +11,7 @@ class PasswordResetState with _$PasswordResetState {
   const PasswordResetState._();
   const factory PasswordResetState.initial() = _Initial;
   const factory PasswordResetState.submitted() = _Submitted;
+  const factory PasswordResetState.loading() = _Loading;
   const factory PasswordResetState.error(AuthFailure failure) = _Error;
 }
 
@@ -20,6 +21,7 @@ class PasswordResetNotifier extends StateNotifier<PasswordResetState> {
   final AuthRepository _authRepository;
 
   Future<void> sendPasswordResetEmail(String email) async {
+    state = const PasswordResetState.loading();
     final failureOrSuccess =
         await _authRepository.sendPasswordResetEmail(email);
     failureOrSuccess.fold(
