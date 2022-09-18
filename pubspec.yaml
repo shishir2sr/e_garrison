@@ -1,6 +1,6 @@
 name: e_garrison
 description: Track guards.
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -20,6 +20,8 @@ dependencies:
   dartz: ^0.10.0
   flutter_riverpod: ^1.0.0
   auto_route: ^5.0.1
+  community_material_icon: ^5.9.55
+  
 
 dev_dependencies:
   flutter_test:
@@ -32,4 +34,13 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/
+    
+    - assets/icons/
+    - assets/images/
+
+  fonts:
+    - family: SF Pro Text
+      fonts:
+        - asset: assets/fonts/SFProText-Bold.ttf
+        - asset: assets/fonts/SFProText-Regular.ttf
+          weight: 800

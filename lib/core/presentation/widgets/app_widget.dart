@@ -14,7 +14,7 @@ class AppWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     //
-    //listening to suthstate searching if user is authenticated or not
+    //listening to authstate searching if user is authenticated or not
     /************************************** */
 
     ref.listen<AuthState>(

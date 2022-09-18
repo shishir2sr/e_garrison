@@ -30,7 +30,6 @@ class EmailVerificationNotifier extends StateNotifier<EmailVerificationState> {
 
   ///email verification resend
   Future<void> resendVerificationEmail() async {
-    state = const EmailVerificationState.loading();
     final successOrFailure = await _authRepository.resendVerificationEmail();
     successOrFailure.fold((failure) => EmailVerificationState.error(failure),
         (r) => const EmailVerificationState.submitted());
