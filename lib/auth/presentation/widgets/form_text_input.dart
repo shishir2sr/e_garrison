@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../core/presentation/theming/custom_colors.dart';
 
@@ -52,6 +53,9 @@ class FormTextInput extends StatelessWidget {
         textAlign: textAlign ?? TextAlign.start,
         controller: controller,
         validator: validator,
+        inputFormatters: [
+          FilteringTextInputFormatter.deny(RegExp(r"\s\b|\b\s"))
+        ],
         style: const TextStyle(
           color: Colors.white70,
           fontSize: 18,

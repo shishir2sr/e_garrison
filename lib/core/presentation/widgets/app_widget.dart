@@ -33,8 +33,9 @@ class AppWidget extends ConsumerWidget {
             //if users email verified, go to Home Page
             //
             if (!isEmailVerified == true) {
-              _appRouter.pushAndPopUntil(const EmailVerificationRoute(),
-                  predicate: (_) => false);
+              _appRouter.push(
+                const EmailVerificationRoute(),
+              );
             } else {
               _appRouter.pushAndPopUntil(const HomeRoute(),
                   predicate: (_) => false);
