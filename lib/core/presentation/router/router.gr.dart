@@ -18,9 +18,10 @@ import '../../../auth/presentation/pages/email_verification_page.dart' as _i5;
 import '../../../auth/presentation/pages/password_reset_page.dart' as _i4;
 import '../../../auth/presentation/pages/sign_in_page.dart' as _i2;
 import '../../../auth/presentation/pages/sign_up_page.dart' as _i3;
-import '../../../home/presentation/bottom%20navigation/another_page.dart'
+import '../../../home/presentation/bottom navigation/widgets/guard_widget.dart'
     as _i8;
-import '../../../home/presentation/bottom%20navigation/main_page.dart' as _i7;
+import '../../../home/presentation/bottom navigation/widgets/home_widget.dart'
+    as _i7;
 import '../../../home/presentation/home_page.dart' as _i6;
 import '../../../splash/presentation/splash_page.dart' as _i1;
 

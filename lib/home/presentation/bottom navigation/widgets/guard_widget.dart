@@ -5,6 +5,11 @@ class AnotherPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Text("Hello world! It's working"),
+      ),
+    );
   }
 }

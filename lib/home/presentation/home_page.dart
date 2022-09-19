@@ -1,5 +1,6 @@
+import 'package:community_material_icon/community_material_icon.dart';
 import 'package:e_garrison/core/presentation/router/router.gr.dart';
-import 'package:e_garrison/home/presentation/sidebar/sidebar_screen.dart';
+import 'package:e_garrison/home/presentation/sidebar/pages/sidebar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:auto_route/auto_route.dart';
@@ -28,14 +29,17 @@ class HomePage extends ConsumerWidget {
             child: child,
           ),
           bottomNavigationBar: BottomNavigationBar(
+              elevation: 10,
               currentIndex: tabsRouter.activeIndex,
               onTap: ((index) {
                 tabsRouter.setActiveIndex(index);
               }),
               items: const [
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.person), label: 'home'),
-                BottomNavigationBarItem(icon: Icon(Icons.map), label: 'map'),
+                    icon: Icon(Icons.home_outlined), label: 'Home'),
+                BottomNavigationBarItem(
+                    icon: Icon(CommunityMaterialIcons.shield_account_outline),
+                    label: 'Guards'),
               ]),
         );
       }),

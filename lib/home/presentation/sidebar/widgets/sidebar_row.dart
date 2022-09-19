@@ -1,4 +1,4 @@
-import 'constants.dart';
+import '../constants.dart';
 import 'sidebar_model.dart';
 
 import 'package:flutter/material.dart';
