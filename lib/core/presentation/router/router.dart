@@ -4,8 +4,8 @@ import '../../../auth/presentation/pages/email_verification_page.dart';
 import '../../../auth/presentation/pages/password_reset_page.dart';
 import '../../../auth/presentation/pages/sign_in_page.dart';
 import '../../../auth/presentation/pages/sign_up_page.dart';
-import '../../../home/presentation/bottom navigation/widgets/guard_widget.dart';
-import '../../../home/presentation/bottom navigation/widgets/home_widget.dart';
+import '../../../home/presentation/bottom_navigation/widgets/guard_widget.dart';
+import '../../../home/presentation/bottom_navigation/widgets/home_widget.dart';
 import '../../../home/presentation/home_page.dart';
 import '../../../splash/presentation/splash_page.dart';
 
@@ -18,7 +18,7 @@ import '../../../splash/presentation/splash_page.dart';
     MaterialRoute(page: EmailVerificationPage),
     MaterialRoute(page: HomePage, children: [
       MaterialRoute(page: MainPage),
-      MaterialRoute(page: AnotherPage),
+      MaterialRoute(page: GuardsPage),
     ]),
   ],
   replaceInRouteName: 'Page,Route',

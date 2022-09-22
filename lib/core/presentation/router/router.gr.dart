@@ -18,9 +18,9 @@ import '../../../auth/presentation/pages/email_verification_page.dart' as _i5;
 import '../../../auth/presentation/pages/password_reset_page.dart' as _i4;
 import '../../../auth/presentation/pages/sign_in_page.dart' as _i2;
 import '../../../auth/presentation/pages/sign_up_page.dart' as _i3;
-import '../../../home/presentation/bottom navigation/widgets/guard_widget.dart'
+import '../../../home/presentation/bottom_navigation/widgets/guard_widget.dart'
     as _i8;
-import '../../../home/presentation/bottom navigation/widgets/home_widget.dart'
+import '../../../home/presentation/bottom_navigation/widgets/home_widget.dart'
     as _i7;
 import '../../../home/presentation/home_page.dart' as _i6;
 import '../../../splash/presentation/splash_page.dart' as _i1;
@@ -59,9 +59,9 @@ class AppRouter extends _i9.RootStackRouter {
       return _i9.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i7.MainPage());
     },
-    AnotherRoute.name: (routeData) {
+    GuardsRoute.name: (routeData) {
       return _i9.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i8.AnotherPage());
+          routeData: routeData, child: const _i8.GuardsPage());
     }
   };
 
@@ -76,8 +76,8 @@ class AppRouter extends _i9.RootStackRouter {
         _i9.RouteConfig(HomeRoute.name, path: '/home-page', children: [
           _i9.RouteConfig(MainRoute.name,
               path: 'main-page', parent: HomeRoute.name),
-          _i9.RouteConfig(AnotherRoute.name,
-              path: 'another-page', parent: HomeRoute.name)
+          _i9.RouteConfig(GuardsRoute.name,
+              path: 'guards-page', parent: HomeRoute.name)
         ])
       ];
 }
@@ -142,9 +142,9 @@ class MainRoute extends _i9.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i8.AnotherPage]
-class AnotherRoute extends _i9.PageRouteInfo<void> {
-  const AnotherRoute() : super(AnotherRoute.name, path: 'another-page');
+/// [_i8.GuardsPage]
+class GuardsRoute extends _i9.PageRouteInfo<void> {
+  const GuardsRoute() : super(GuardsRoute.name, path: 'guards-page');
 
-  static const String name = 'AnotherRoute';
+  static const String name = 'GuardsRoute';
 }

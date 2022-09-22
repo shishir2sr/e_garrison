@@ -21,7 +21,6 @@ dependencies:
   flutter_riverpod: ^1.0.0
   auto_route: ^5.0.1
   community_material_icon: ^5.9.55
-  
 
 dev_dependencies:
   flutter_test:
@@ -34,7 +33,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    
+
     - assets/icons/
     - assets/images/
 

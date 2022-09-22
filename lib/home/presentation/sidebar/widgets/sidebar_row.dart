@@ -1,5 +1,5 @@
-import '../constants.dart';
-import 'sidebar_model.dart';
+import '../../../../core/presentation/theming/custom_colors.dart';
+import '../models/sidebar_model.dart';
 
 import 'package:flutter/material.dart';
 

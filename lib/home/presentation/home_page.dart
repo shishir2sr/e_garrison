@@ -13,34 +13,49 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return AutoTabsRouter(
-      routes: const [MainRoute(), AnotherRoute()],
+      routes: const [MainRoute(), GuardsRoute()],
       builder: ((context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
           appBar: AppBar(
             backgroundColor: CustomColors.darkBlue,
-            title: const Text('Home'),
+            title: const Text('Dashboard'),
             centerTitle: true,
           ),
           backgroundColor: Colors.white,
           drawer: const SidebarScreen(),
-          body: FadeTransition(
-            opacity: animation,
+
+          body: SlideTransition(
+            position: Tween(
+                    begin: const Offset(1.0, 0.0), end: const Offset(0.0, 0.0))
+                .animate(animation),
             child: child,
           ),
+          // body: FadeTransition(
+          //   opacity: animation,
+          //   child: child,
+          // ),
           bottomNavigationBar: BottomNavigationBar(
-              elevation: 10,
-              currentIndex: tabsRouter.activeIndex,
-              onTap: ((index) {
-                tabsRouter.setActiveIndex(index);
-              }),
-              items: const [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.home_outlined), label: 'Home'),
-                BottomNavigationBarItem(
-                    icon: Icon(CommunityMaterialIcons.shield_account_outline),
-                    label: 'Guards'),
-              ]),
+            elevation: 10,
+            currentIndex: tabsRouter.activeIndex,
+            onTap: ((index) {
+              tabsRouter.setActiveIndex(index);
+            }),
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.home_outlined,
+                    size: 40,
+                  ),
+                  label: 'Home'),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    CommunityMaterialIcons.shield_account_outline,
+                    size: 40,
+                  ),
+                  label: 'Guards'),
+            ],
+          ),
         );
       }),
     );

@@ -1,9 +1,9 @@
-import 'package:e_garrison/home/presentation/sidebar/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../auth/shared/providers.dart';
-import '../widgets/sidebar_model.dart';
+import '../../../../core/presentation/theming/custom_colors.dart';
+import '../models/sidebar_model.dart';
 import '../widgets/sidebar_row.dart';
 
 class SidebarScreen extends ConsumerWidget {
