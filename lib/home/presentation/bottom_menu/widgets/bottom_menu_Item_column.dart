@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/theming/custom_colors.dart';

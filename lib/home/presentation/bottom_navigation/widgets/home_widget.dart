@@ -9,8 +9,17 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
-      children: const [
-        BottomMenuBar(),
+      children: [
+        Expanded(
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: const Image(
+              image: AssetImage('assets/images/googleMap.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        const BottomMenuBar(),
       ],
     );
   }
